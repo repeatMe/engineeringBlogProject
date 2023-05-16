@@ -6,7 +6,6 @@ import java.util.Set;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -34,6 +33,9 @@ public class Post {
    @OneToMany(mappedBy="post",cascade=CascadeType.ALL,orphanRemoval=true)
    private Set<Comment> comments=new HashSet<>();
    
+   @ManyToOne(fetch=FetchType.LAZY)
+   @JoinColumn(name="category_id")
+   private Category category;
    
    
    

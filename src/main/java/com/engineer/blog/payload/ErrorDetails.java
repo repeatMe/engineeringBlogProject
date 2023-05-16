@@ -22,8 +22,6 @@ public String getMessage() {
 
 public String getDetails() {
 	return details;
-}
+   }
 
- 
- 
 }
